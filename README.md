@@ -6,11 +6,11 @@ PhizChat Business Account project and IM review, with an integrated interactive 
 - [Open the latest interactive prototype](https://johnsun180406-netizen.github.io/business-account-interactive-review/prototype.html)
 - Download [prototype.html](prototype.html) and open it in a browser for an offline interactive copy.
 
-## Design v23 · 2026-11-05
+## Design v24 · 2026-11-05
 
 - First-contact consent appears with the first merchant message, separate from the identity card.
 - Test scenarios use shared conversation rows, bubbles, composer and sheets.
-- Nine merchant scenarios are available in Test scenarios, aligned with Phase 1 message elements.
+- Nine merchant scenarios are available in Test scenarios, with source-file content preserved verbatim; specification conflicts are flagged separately.
 - Interactive cases cover handoff, file retry, URL failures, reply/list actions, expiry and Utility pause/resume.
 - Users can reply before accepting; replying does not grant consent.
 - Accept is separate from adding the business to contacts.
