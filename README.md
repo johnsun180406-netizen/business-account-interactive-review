@@ -6,11 +6,13 @@ PhizChat Business Account project and IM review, with an integrated interactive 
 - [Open the latest interactive prototype](https://johnsun180406-netizen.github.io/business-account-interactive-review/prototype.html)
 - Download [prototype.html](prototype.html) and open it in a browser for an offline interactive copy.
 
-## Design v18 · 2026-11-02
+## Design v19 · 2026-11-04
 
 - Users can reply before accepting; replying does not grant consent.
 - Accept is separate from adding the business to contacts.
-- Profile contact and block actions remain in the bottom management section.
+- Profiles show public information before conversation creation, and full settings afterwards. Add to contacts is near the top; Block remains at the bottom.
+- Unsaved contacts receive a dismissible reminder above the input. Saving a contact does not grant consent.
+- The business introduction is fixed; acceptance inserts a separate system message.
 - Blocking and unblocking insert system notices in the conversation.
 - Conversation previews stay on one line with the time aligned to the right.
 - English, 简体中文 and Português (BR) are supported.
