@@ -2166,14 +2166,10 @@ function categoryFeedback(type,active){
     pt:`${categoryLabel(type,&#x27;pt&#x27;)} ${active?&#x27;aceitas&#x27;:&#x27;desativadas&#x27;}.`
   };
 }
-function firstMarketingMessage(){
-  if(!firstContact||!s.previewMarketing||s.cleared||s.blocked||!available())return &#x27;&#x27;;
-  const status=mainSubscriptionStatus(&#x27;marketing&#x27;);
+function marketingMessageCard(text,at,report){
   const title=ct(&#x27;PicPay 周末优惠&#x27;,&#x27;PicPay weekend offers&#x27;,&#x27;Ofertas de fim de semana do PicPay&#x27;);
-  const text=ct(&#x27;本周末活动已上线，打开活动页查看可用优惠。&#x27;,&#x27;Weekend offers are here. Open the offer page to see what’s available.&#x27;,&#x27;As ofertas de fim de semana chegaram. Confira as opções na página da campanha.&#x27;);
   const cta=ct(&#x27;查看优惠&#x27;,&#x27;View offers&#x27;,&#x27;Ver ofertas&#x27;);
-  return `&lt;div class=&quot;pb-date&quot;&gt;${esc(ct(&#x27;几天后&#x27;,&#x27;A few days later&#x27;,&#x27;Alguns dias depois&#x27;))}&lt;/div&gt;
-    &lt;div class=&quot;pb-bubble pb-message-card bt-marketing-card&quot; data-business-message data-notice-report=&quot;first-marketing-report&quot; tabindex=&quot;0&quot;&gt;
+  return `&lt;div class=&quot;pb-bubble pb-message-card bt-marketing-card&quot; data-business-message data-notice-report=&quot;${report}&quot; tabindex=&quot;0&quot;&gt;
       &lt;svg class=&quot;bt-marketing-image&quot; viewBox=&quot;0 0 320 132&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;
         &lt;path fill=&quot;#06452f&quot; d=&quot;M0 0h320v132H0z&quot;/&gt;
         &lt;circle cx=&quot;243&quot; cy=&quot;53&quot; r=&quot;106&quot; fill=&quot;#086a45&quot;/&gt;
@@ -2184,16 +2180,30 @@ function firstMarketingMessage(){
         &lt;path d=&quot;M146 32v16m-8-8h16m137 63v12m-6-6h12&quot; stroke=&quot;#bdffcb&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot;/&gt;
         &lt;text x=&quot;23&quot; y=&quot;75&quot; fill=&quot;#fff&quot; font-size=&quot;27&quot; font-family=&quot;system-ui,sans-serif&quot; font-weight=&quot;700&quot;&gt;PicPay&lt;/text&gt;
       &lt;/svg&gt;
-      &lt;strong&gt;${esc(title)}&lt;/strong&gt;&lt;p&gt;${esc(text)}&lt;/p&gt;&lt;span class=&quot;pb-time&quot;&gt;10:15&lt;/span&gt;
+      &lt;strong&gt;${esc(title)}&lt;/strong&gt;&lt;p&gt;${esc(text)}&lt;/p&gt;&lt;span class=&quot;pb-time&quot;&gt;${at}&lt;/span&gt;
       &lt;div class=&quot;pb-card-actions&quot;&gt;&lt;button type=&quot;button&quot; data-action=&quot;marketing-offer&quot;&gt;${esc(cta)}&lt;/button&gt;&lt;/div&gt;
-    &lt;/div&gt;
-    ${status===&#x27;PENDING&#x27;?caseConsentTrigger(NAME,&#x27;marketing&#x27;,&#x27;first-marketing-&#x27;):status===&#x27;ACTIVE&#x27;?consentSuccess(cx(categoryFeedback(&#x27;marketing&#x27;,true))):&#x27;&#x27;}`;
+    &lt;/div&gt;`;
+}
+function firstMarketingMessage(){
+  if(!firstContact||!s.previewMarketing||s.cleared||s.blocked||!available())return &#x27;&#x27;;
+  const status=mainSubscriptionStatus(&#x27;marketing&#x27;);
+  const first=ct(&#x27;本周末活动已上线，打开活动页查看可用优惠。&#x27;,&#x27;Weekend offers are here. Open the offer page to see what’s available.&#x27;,&#x27;As ofertas de fim de semana chegaram. Confira as opções na página da campanha.&#x27;);
+  const followup=ct(&#x27;周末优惠即将结束，打开活动页查看可用优惠。&#x27;,&#x27;Weekend offers are ending soon. Open the offer page to see what’s available.&#x27;,&#x27;As ofertas de fim de semana terminam em breve. Confira as opções na página da campanha.&#x27;);
+  return `&lt;div class=&quot;pb-date&quot;&gt;${esc(ct(&#x27;几天后&#x27;,&#x27;A few days later&#x27;,&#x27;Alguns dias depois&#x27;))}&lt;/div&gt;
+    ${marketingMessageCard(first,&#x27;10:15&#x27;,&#x27;first-marketing-report&#x27;)}
+    ${status===&#x27;PENDING&#x27;?caseConsentTrigger(NAME,&#x27;marketing&#x27;,&#x27;first-marketing-&#x27;):status===&#x27;ACTIVE&#x27;?consentSuccess(cx(categoryFeedback(&#x27;marketing&#x27;,true))):&#x27;&#x27;}
+    ${s.marketingDelivery===&#x27;delivered&#x27;?marketingMessageCard(followup,&#x27;10:18&#x27;,&#x27;first-marketing-followup-report&#x27;):&#x27;&#x27;}`;
 }
 function handleFirstMarketing(action){
   if(!firstContact||s.blocked||!available()||s.cleared)return;
   if(s.mode===&#x27;offline&#x27;)return toast(&#x27;acceptFailed&#x27;);
-  if(action===&#x27;preview-marketing&#x27;){
-    if(mainSubscriptionStatus(&#x27;marketing&#x27;)===&#x27;PAUSED&#x27;)return;
+  const status=mainSubscriptionStatus(&#x27;marketing&#x27;);
+  if(action===&#x27;preview-marketing-followup&#x27;){
+    if(!s.previewMarketing||s.marketingDelivery===&#x27;delivered&#x27;)return;
+    s.marketingDelivery=status===&#x27;ACTIVE&#x27;?&#x27;delivered&#x27;:status===&#x27;PAUSED&#x27;?&#x27;paused&#x27;:&#x27;pending&#x27;;
+    record(&#x27;sampleOnly&#x27;,{prototype_only:true,category:&#x27;marketing&#x27;,message:&#x27;first-marketing-followup&#x27;,delivered:s.marketingDelivery===&#x27;delivered&#x27;,opt_in:status});
+  }else if(action===&#x27;preview-marketing&#x27;){
+    if(status===&#x27;PAUSED&#x27;)return;
     s.previewMarketing=true;
     const preferences=consentMap(&#x27;picpay&#x27;);
     preferences.marketing??=&#x27;PENDING&#x27;;
@@ -2414,7 +2424,7 @@ function firstConsentTrigger(){return caseConsentTrigger(NAME,&#x27;bill&#x27;,&
 function caseConsentTrigger(name,notice,prefix){
   const type=notice===&#x27;marketing&#x27;?&#x27;marketing&#x27;:&#x27;utility&#x27;;
   const topic=noticeTypes[notice];
-  const label=type===&#x27;marketing&#x27;?[&#x27;营销消息&#x27;,&#x27;marketing messages&#x27;,&#x27;mensagens de marketing&#x27;]:notice===&#x27;bill&#x27;?[&#x27;账单消息&#x27;,&#x27;bill notices&#x27;,&#x27;avisos de faturas&#x27;]:[topic[0]+&#x27;通知&#x27;,&#x27;notices about &#x27;+topic[1],&#x27;avisos sobre &#x27;+topic[2]];
+  const label=type===&#x27;marketing&#x27;?[&#x27;营销活动消息&#x27;,&#x27;promotional messages&#x27;,&#x27;mensagens promocionais&#x27;]:notice===&#x27;bill&#x27;?[&#x27;账单消息&#x27;,&#x27;bill notices&#x27;,&#x27;avisos de faturas&#x27;]:[topic[0]+&#x27;通知&#x27;,&#x27;notices about &#x27;+topic[1],&#x27;avisos sobre &#x27;+topic[2]];
   const accept=ct(`接受 ${name} 的${label[0]}`,`Accept ${label[1]} from ${name}`,`Aceitar ${label[2]} de ${name}`);
   const scope=type===&#x27;utility&#x27;
     ?ct(&#x27;授权范围：该商家的 Utility（服务通知），包括此类消息。&#x27;,&#x27;Covers this business’s Utility notices, including this kind of notice.&#x27;,&#x27;Inclui os avisos de serviço (Utility) desta empresa, inclusive avisos como este.&#x27;)
@@ -2470,7 +2480,19 @@ function renderNotes(){
  let html=&#x27;&#x27;;
  if(s.review===&#x27;messages&#x27;)html=`&lt;h3&gt;${esc(t(&#x27;formatTitle&#x27;))}&lt;/h3&gt;&lt;label class=&quot;pb-field&quot;&gt;${esc(t(&#x27;messages&#x27;))}&lt;select id=&quot;bt-format&quot; class=&quot;bt-format-choice&quot;&gt;${formats.map(f=&gt;`&lt;option value=&quot;${f}&quot;${s.format===f?&#x27; selected&#x27;:&#x27;&#x27;}&gt;${esc(t(f===&#x27;list&#x27;?&#x27;listFormat&#x27;:f))}&lt;/option&gt;`).join(&#x27;&#x27;)}&lt;/select&gt;&lt;/label&gt;&lt;ol class=&quot;pb-note-list&quot; style=&quot;margin-top:14px&quot;&gt;${[&#x27;m1&#x27;,&#x27;m2&#x27;,&#x27;m3&#x27;,&#x27;m4&#x27;,&#x27;richScope&#x27;,&#x27;figmaScope&#x27;].map(k=&gt;&#x27;&lt;li&gt;&#x27;+esc(t(k))+&#x27;&lt;/li&gt;&#x27;).join(&#x27;&#x27;)}&lt;/ol&gt;`;
  else html=`&lt;h3&gt;${esc(t(&#x27;ruleTitle&#x27;))}&lt;/h3&gt;&lt;ol class=&quot;pb-note-list&quot;&gt;${[&#x27;profileStateRule&#x27;,&#x27;contactPromptRule&#x27;,&#x27;accessRule1&#x27;,&#x27;accessRule2&#x27;,&#x27;accessRule3&#x27;,&#x27;r1&#x27;,&#x27;r2&#x27;,&#x27;r3&#x27;,&#x27;r4&#x27;,&#x27;r5&#x27;,&#x27;r6&#x27;].map(k=&gt;&#x27;&lt;li&gt;&#x27;+esc(t(k))+&#x27;&lt;/li&gt;&#x27;).join(&#x27;&#x27;)}&lt;/ol&gt;&lt;div class=&quot;bt-review-item&quot;&gt;${esc(t(&#x27;pendingDetails&#x27;))}&lt;/div&gt;&lt;p class=&quot;bt-context-source&quot;&gt;${esc(t(&#x27;accessRule4&#x27;))}&lt;/p&gt;`;
- if(firstContact){html+=&#x27;&lt;div class=&quot;bt-review-item&quot;&gt;&#x27;+esc(t(&#x27;firstHint&#x27;))+&#x27; &#x27;+esc(t(&#x27;firstStateRule&#x27;))+&#x27;&lt;/div&gt;&#x27;;if(!s.previewMarketing&amp;&amp;!s.blocked&amp;&amp;!s.cleared&amp;&amp;mainSubscriptionStatus(&#x27;marketing&#x27;)!==&#x27;PAUSED&#x27;)html+=`&lt;button type=&quot;button&quot; class=&quot;pb-button full&quot; data-action=&quot;preview-marketing&quot;&gt;${esc(ct(&#x27;模拟几天后收到营销消息&#x27;,&#x27;Simulate a marketing message a few days later&#x27;,&#x27;Simular mensagem de marketing alguns dias depois&#x27;))}&lt;/button&gt;`;}
+ if(firstContact){
+  html+=&#x27;&lt;div class=&quot;bt-review-item&quot;&gt;&#x27;+esc(t(&#x27;firstHint&#x27;))+&#x27; &#x27;+esc(t(&#x27;firstStateRule&#x27;))+&#x27;&lt;/div&gt;&#x27;;
+  if(!s.blocked&amp;&amp;!s.cleared&amp;&amp;available()){
+   if(!s.previewMarketing&amp;&amp;mainSubscriptionStatus(&#x27;marketing&#x27;)!==&#x27;PAUSED&#x27;)html+=`&lt;button type=&quot;button&quot; class=&quot;pb-button full&quot; data-action=&quot;preview-marketing&quot;&gt;${esc(ct(&#x27;模拟几天后收到首条营销消息&#x27;,&#x27;Simulate the first marketing message a few days later&#x27;,&#x27;Simular a primeira mensagem de marketing alguns dias depois&#x27;))}&lt;/button&gt;`;
+   if(s.previewMarketing&amp;&amp;s.marketingDelivery!==&#x27;delivered&#x27;)html+=`&lt;button type=&quot;button&quot; class=&quot;pb-button full&quot; data-action=&quot;preview-marketing-followup&quot;&gt;${esc(ct(&#x27;模拟商户发送第二条营销消息&#x27;,&#x27;Simulate the business sending a second marketing message&#x27;,&#x27;Simular o envio da segunda mensagem de marketing pela empresa&#x27;))}&lt;/button&gt;`;
+   const deliveryText={
+    pending:ct(&#x27;第二条营销消息未送达。用户接受营销活动消息后，商户可重新发送。&#x27;,&#x27;The second marketing message was not delivered. The business can retry after the user accepts marketing.&#x27;,&#x27;A segunda mensagem de marketing não foi entregue. A empresa pode tentar de novo após o usuário aceitar.&#x27;),
+    paused:ct(&#x27;第二条营销消息未送达。用户已关闭该商家的营销消息。&#x27;,&#x27;The second marketing message was not delivered because the user turned off marketing from this business.&#x27;,&#x27;A segunda mensagem de marketing não foi entregue porque o usuário desativou o marketing desta empresa.&#x27;),
+    delivered:ct(&#x27;第二条营销消息已送达。&#x27;,&#x27;The second marketing message was delivered.&#x27;,&#x27;A segunda mensagem de marketing foi entregue.&#x27;)
+   }[s.marketingDelivery];
+   if(deliveryText)html+=`&lt;p class=&quot;bt-review-item&quot; role=&quot;status&quot;&gt;${esc(deliveryText)}&lt;/p&gt;`;
+  }
+ }
  if(s.page===&#x27;list&#x27;)html+=`&lt;div class=&quot;pb-review-controls&quot;&gt;${btn(&#x27;swipeLeft&#x27;,&#x27;preview-left&#x27;)}${btn(&#x27;swipeRight&#x27;,&#x27;preview-right&#x27;)}${btn(&#x27;longpress&#x27;,&#x27;list-menu&#x27;)}${btn(&#x27;swipeMore&#x27;,&#x27;more-sheet&#x27;)}${btn(&#x27;typechannel&#x27;,&#x27;preview-channel-context&#x27;)}&lt;/div&gt;`;
  if([&#x27;DISABLED&#x27;,&#x27;RESTRICTED&#x27;].includes(s.life))html+=btn(&#x27;restore&#x27;,&#x27;restore&#x27;,&#x27;full&#x27;);
  html+=`&lt;div class=&quot;pb-note-source&quot;&gt;&lt;a href=&quot;https://phiz.atlassian.net/wiki/spaces/CP/pages/834699287&quot; target=&quot;_blank&quot; rel=&quot;noreferrer&quot;&gt;${esc(t(&#x27;sourcePrd&#x27;))}&lt;/a&gt; · &lt;a href=&quot;https://www.figma.com/design/Njtv9YG3qdWWZ90uEn0ty4/Redesign-Chats?node-id=2018-44358&quot; target=&quot;_blank&quot; rel=&quot;noreferrer&quot;&gt;${esc(t(&#x27;sourceDesign&#x27;))}&lt;/a&gt;&lt;/div&gt;`;
@@ -2588,8 +2610,8 @@ function choose(key){if(s.blocked||!available()||s.session!==&#x27;active&#x27;|
 const sheetKinds=[&#x27;block&#x27;,&#x27;unblock&#x27;,&#x27;delete&#x27;,&#x27;clear&#x27;,&#x27;list-menu&#x27;,&#x27;chat-menu&#x27;,&#x27;app-menu&#x27;,&#x27;report&#x27;,&#x27;report-history&#x27;,&#x27;receiving&#x27;,&#x27;theme&#x27;,&#x27;lock&#x27;,&#x27;topics&#x27;,&#x27;external&#x27;,&#x27;mini&#x27;,&#x27;media&#x27;,&#x27;media-library&#x27;,&#x27;saved-messages&#x27;,&#x27;message-menu&#x27;,&#x27;message-more&#x27;,&#x27;call-preview&#x27;,&#x27;entry&#x27;,&#x27;attachment&#x27;,&#x27;business-info&#x27;,&#x27;disabled-block&#x27;,&#x27;security-info&#x27;,&#x27;gallery-picker&#x27;,&#x27;camera-picker&#x27;,&#x27;document-picker&#x27;,&#x27;favorite-picker&#x27;,&#x27;color-picker&#x27;,&#x27;channel-post&#x27;];
 function act(action){
  if(action===&#x27;marketing-offer&#x27;&amp;&amp;firstContact&amp;&amp;s.previewMarketing&amp;&amp;!s.cleared&amp;&amp;!s.blocked&amp;&amp;available())return sheet(&#x27;marketing-offer&#x27;);
- if(action===&#x27;preview-marketing&#x27;||action===&#x27;first-marketing-accept&#x27;||action===&#x27;first-marketing-decline&#x27;)return handleFirstMarketing(action);
- if(action===&#x27;first-report&#x27;||action===&#x27;first-marketing-report&#x27;){s.reportTarget={category:action===&#x27;first-report&#x27;?&#x27;utility&#x27;:&#x27;marketing&#x27;,message:action===&#x27;first-report&#x27;?&#x27;first-bill&#x27;:&#x27;first-marketing&#x27;};return sheet(&#x27;report&#x27;);}
+ if(action===&#x27;preview-marketing&#x27;||action===&#x27;preview-marketing-followup&#x27;||action===&#x27;first-marketing-accept&#x27;||action===&#x27;first-marketing-decline&#x27;)return handleFirstMarketing(action);
+ if([&#x27;first-report&#x27;,&#x27;first-marketing-report&#x27;,&#x27;first-marketing-followup-report&#x27;].includes(action)){s.reportTarget={category:action===&#x27;first-report&#x27;?&#x27;utility&#x27;:&#x27;marketing&#x27;,message:action===&#x27;first-report&#x27;?&#x27;first-bill&#x27;:action.slice(0,-7)};return sheet(&#x27;report&#x27;);}
  if(action===&#x27;report&#x27;)s.reportTarget=null;
  if(action.startsWith(&#x27;case-&#x27;))return phaseCaseAction(action);
  if(action.startsWith(&#x27;business-sub-&#x27;))return mainSetSubscription(action);
