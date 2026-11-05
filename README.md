@@ -6,8 +6,10 @@ PhizChat Business Account project and IM review, with an integrated interactive 
 - [Open the latest interactive prototype](https://johnsun180406-netizen.github.io/business-account-interactive-review/prototype.html)
 - Download [prototype.html](prototype.html) and open it in a browser for an offline interactive copy.
 
-## Design v29 · 2026-11-05
+## Design v30 · 2026-11-05
 
+- Regular business conversations, first contact and test scenarios share the same Manage this business menu and notification-management components.
+- Blocking and unblocking use confirmation dialogs in all conversations. Unblocking leaves notification categories paused. Offline and unavailable states prevent subscription changes.
 - Acceptance uses the screenshot-style Phiz card and a green check confirmation. Notification management is entered explicitly through the upper-right menu.
 - Push previews use the PhizChat app name and icon, the business title and message summary. Muted or blocked conversations suppress Push previews.
 - Test scenario conversation menus show Mute conversation, Notification management and Block business.
