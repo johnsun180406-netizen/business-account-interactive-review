@@ -6,7 +6,7 @@ PhizChat Business Account project and IM review, with an integrated interactive 
 - [Open the latest interactive prototype](https://johnsun180406-netizen.github.io/business-account-interactive-review/prototype.html)
 - Download [prototype.html](prototype.html) and open it in a browser for an offline interactive copy.
 
-## Design v24 · 2026-11-05
+## Design v25 · 2026-11-05
 
 - First-contact consent appears with the first merchant message, separate from the identity card.
 - Test scenarios use shared conversation rows, bubbles, composer and sheets.
