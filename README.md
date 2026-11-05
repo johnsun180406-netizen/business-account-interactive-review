@@ -6,7 +6,7 @@ PhizChat Business Account project and IM review, with an integrated interactive 
 - [Open the latest interactive prototype](https://johnsun180406-netizen.github.io/business-account-interactive-review/prototype.html)
 - Download [prototype.html](prototype.html) and open it in a browser for an offline interactive copy.
 
-## Design v32 · 2026-11-05
+## Design v33 · 2026-11-05
 
 - Regular business conversations, first contact and test scenarios share the same Manage this business menu and notification-management components.
 - Blocking and unblocking use confirmation dialogs in all conversations. Unblocking leaves notification categories paused. Offline and unavailable states prevent subscription changes.
@@ -15,7 +15,7 @@ PhizChat Business Account project and IM review, with an integrated interactive 
 - Test scenario conversation menus show Mute conversation, Notification management and Block business.
 - Notification management provides independent Accept or Do not receive choices for Utility and Marketing.
 - Each consent prompt offers one message-specific Accept button. Skipping leaves the category unapproved, explicit refusal is in Notification management, and reporting is in the message menu.
-- The first-contact demonstration includes separate Utility and Marketing requests in one conversation.
+- The first-contact demonstration includes separate Utility and Marketing requests in one conversation. The PicPay marketing example shows an image, offer copy, and a View offers button that opens a local preview.
 - Test scenarios use shared conversation rows, bubbles, composer and sheets.
 - Nine merchant scenarios are available in Test scenarios, with source-file content preserved verbatim; specification conflicts are flagged separately.
 - Interactive cases cover handoff, file retry, URL failures, reply/list actions, expiry and Utility pause/resume.
