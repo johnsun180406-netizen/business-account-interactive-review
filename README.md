@@ -6,8 +6,10 @@ PhizChat Business Account project and IM review, with an integrated interactive 
 - [Open the latest interactive prototype](https://johnsun180406-netizen.github.io/business-account-interactive-review/prototype.html)
 - Download [prototype.html](prototype.html) and open it in a browser for an offline interactive copy.
 
-## Design v25 · 2026-11-05
+## Design v27 · 2026-11-05
 
+- Test scenario conversation menus show Mute conversation, Notification management and Block business.
+- Notification management has an overall receive switch and independent business-specific categories; muting does not change subscription consent. Turning the overall switch back on only restores already allowed categories.
 - First-contact consent appears with the first merchant message, separate from the identity card.
 - Test scenarios use shared conversation rows, bubbles, composer and sheets.
 - Nine merchant scenarios are available in Test scenarios, with source-file content preserved verbatim; specification conflicts are flagged separately.
