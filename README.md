@@ -6,7 +6,7 @@ PhizChat Business Account project and IM review, with an integrated interactive 
 - [Open the latest interactive prototype](https://johnsun180406-netizen.github.io/business-account-interactive-review/prototype.html)
 - Download [prototype.html](prototype.html) and open it in a browser for an offline interactive copy.
 
-## Design v37 · 2026-11-11
+## Design v38 · 2026-11-11
 
 - Preview states are organized into seven groups and 20 presets. Conversation creation, service windows, business availability and category consent are shown separately. Legacy snapshots and first-contact transitions preserve accepted category choices.
 - Regular business conversations, first contact and test scenarios share the same Manage this business menu and notification-management components.

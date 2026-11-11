@@ -2432,7 +2432,7 @@ function handleFirstMarketing(action){
   const status=mainSubscriptionStatus(&#x27;marketing&#x27;);
   if(action===&#x27;preview-marketing-followup&#x27;){
     if(!s.previewMarketing||s.marketingDelivery===&#x27;delivered&#x27;)return;
-    s.marketingDelivery=status===&#x27;ACTIVE&#x27;?&#x27;delivered&#x27;:status===&#x27;PAUSED&#x27;?&#x27;paused&#x27;:&#x27;pending&#x27;;
+    s.marketingDelivery=s.life===&#x27;RESTRICTED&#x27;?&#x27;restricted&#x27;:status===&#x27;ACTIVE&#x27;?&#x27;delivered&#x27;:status===&#x27;PAUSED&#x27;?&#x27;paused&#x27;:&#x27;pending&#x27;;
     record(&#x27;sampleOnly&#x27;,{prototype_only:true,category:&#x27;marketing&#x27;,message:&#x27;first-marketing-followup&#x27;,delivered:s.marketingDelivery===&#x27;delivered&#x27;,opt_in:status});
   }else if(action===&#x27;preview-marketing&#x27;){
     if(status===&#x27;PAUSED&#x27;)return;
@@ -2788,7 +2788,8 @@ function renderNotes(){
    const deliveryText={
     pending:ct(&#x27;第二条营销消息未送达。用户接受营销活动消息后，商户可重新发送。&#x27;,&#x27;The second marketing message was not delivered. The business can retry after the user accepts marketing.&#x27;,&#x27;A segunda mensagem de marketing não foi entregue. A empresa pode tentar de novo após o usuário aceitar.&#x27;),
     paused:ct(&#x27;第二条营销消息未送达。用户已关闭该商家的营销消息。&#x27;,&#x27;The second marketing message was not delivered because the user turned off marketing from this business.&#x27;,&#x27;A segunda mensagem de marketing não foi entregue porque o usuário desativou o marketing desta empresa.&#x27;),
-    delivered:ct(&#x27;第二条营销消息已送达。&#x27;,&#x27;The second marketing message was delivered.&#x27;,&#x27;A segunda mensagem de marketing foi entregue.&#x27;)
+    delivered:ct(&#x27;第二条营销消息已送达。&#x27;,&#x27;The second marketing message was delivered.&#x27;,&#x27;A segunda mensagem de marketing foi entregue.&#x27;),
+    restricted:ct(&#x27;第二条营销消息未送达。商业号当前受限，接受授权不会解除平台限制。&#x27;,&#x27;The second marketing message was not delivered. Consent does not remove the platform restriction on this business.&#x27;,&#x27;A segunda mensagem de marketing não foi entregue. A autorização não remove a restrição da plataforma sobre a empresa.&#x27;)
    }[s.marketingDelivery];
    if(deliveryText)html+=`&lt;p class=&quot;bt-review-item&quot; role=&quot;status&quot;&gt;${esc(deliveryText)}&lt;/p&gt;`;
   }
