@@ -6,8 +6,9 @@ PhizChat Business Account project and IM review, with an integrated interactive 
 - [Open the latest interactive prototype](https://johnsun180406-netizen.github.io/business-account-interactive-review/prototype.html)
 - Download [prototype.html](prototype.html) and open it in a browser for an offline interactive copy.
 
-## Design v41 · 2026-11-12
+## Design v42 · 2026-11-12
 
+- The whole business-account identity card opens the corresponding conversation in both simple and full profiles, including test merchants. Opening it does not send a message, create consent, or create an empty chat record.
 - Business profiles follow the supplied cover layout. Before conversation creation, show the A sections only; after creation, add media, message management, mute, theme, lock and saved messages. Security and chat management appear in both. Empty history cannot be cleared.
 - Linked Channel and Mini App entries follow association rules, alongside labeled Chat and Search shortcuts. Message management reuses independent Utility (Service messages) and Marketing decisions, without a master switch. Verification dates are illustrative sample data.
 - Preview states are organized into seven groups and 22 presets. Requested remarks follow the preview state names; linked-service presets include no Channel, no Mini App, and neither linked. List-specific notes explain unchanged user interactions. Profile review preserves existing verification. Conversation creation, service windows, business availability and category consent are shown separately. Legacy snapshots and first-contact transitions preserve accepted category choices.
