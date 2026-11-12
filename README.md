@@ -6,9 +6,9 @@ PhizChat Business Account project and IM review, with an integrated interactive 
 - [Open the latest interactive prototype](https://johnsun180406-netizen.github.io/business-account-interactive-review/prototype.html)
 - Download [prototype.html](prototype.html) and open it in a browser for an offline interactive copy.
 
-## Design v39 · 2026-11-12
+## Design v40 · 2026-11-12
 
-- Preview states are organized into seven groups and 21 presets, with list-specific scenario notes and an unlinked Mini App preset. Profile review preserves existing verification. Conversation creation, service windows, business availability and category consent are shown separately. Legacy snapshots and first-contact transitions preserve accepted category choices.
+- Preview states are organized into seven groups and 22 presets. Requested remarks follow the preview state names; linked-service presets include no Channel, no Mini App, and neither linked. List-specific notes explain unchanged user interactions. Profile review preserves existing verification. Conversation creation, service windows, business availability and category consent are shown separately. Legacy snapshots and first-contact transitions preserve accepted category choices.
 - Regular business conversations, first contact and test scenarios share the same Manage this business menu and notification-management components.
 - Blocking and unblocking use confirmation dialogs in all conversations. Unblocking leaves notification categories paused. Offline and unavailable states prevent subscription changes.
 - Acceptance uses the screenshot-style Phiz card and a green check confirmation. Notification management is entered explicitly through the upper-right menu.
