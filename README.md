@@ -6,8 +6,9 @@ PhizChat Business Account project and IM review, with an integrated interactive 
 - [Open the latest interactive prototype](https://johnsun180406-netizen.github.io/business-account-interactive-review/prototype.html)
 - Download [prototype.html](prototype.html) and open it in a browser for an offline interactive copy.
 
-## Design v43 · 2026-11-12
+## Design v44 · 2026-11-12
 
+- H5 uses the finalized floating PhizChat banner, centered merchant card, wallpaper and legal footer. Unavailable links use the broken-link page; the app action opens PhizChat without returning to the invalid merchant. Normal installation and sign-in preserve the original business target.
 - Conversation identity cards use a centered avatar, name, verification date and fixed introduction. Block and Profile sit side by side, with a separate Add contact entry and saved feedback. First-contact consent timing is unchanged.
 - The whole business-account identity card opens the corresponding conversation in both simple and full profiles, including test merchants. Opening it does not send a message, create consent, or create an empty chat record.
 - Business profiles follow the supplied cover layout. Before conversation creation, show the A sections only; after creation, add media, message management, mute, theme, lock and saved messages. Security and chat management appear in both. Empty history cannot be cleared.
