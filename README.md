@@ -1,47 +1,22 @@
 # Business Account Interactive Review
 
-PhizChat Business Account project and IM review, with an integrated interactive prototype. PicPay is an example merchant.
+Current design: **v48** · 2026-11-13
 
-- [Review page](https://johnsun180406-netizen.github.io/business-account-interactive-review/) — existing project and IM documents, with the updated prototype in the “交互原型 / Interactive prototype” section.
-- [Open the latest interactive prototype](https://johnsun180406-netizen.github.io/business-account-interactive-review/prototype.html)
-- Download [prototype.html](prototype.html) and open it in a browser for an offline interactive copy.
+PicPay is an example merchant. This prototype does not establish App/API implementation or acceptance.
 
-## Design v47 · 2026-11-13
+- [Open interactive prototype](https://johnsun180406-netizen.github.io/business-account-interactive-review/prototype.html)
+- [Version history / 版本记录 / Histórico](https://johnsun180406-netizen.github.io/business-account-interactive-review/versions.html)
+- [Changelog](CHANGELOG.md) · [Versioning process](VERSIONING.md) · [Registry](versions.json)
+- [Original project and IM review](https://johnsun180406-netizen.github.io/business-account-interactive-review/)
+- Download [prototype.html](prototype.html) to open an offline interactive copy.
 
-- The composer follows the supplied screenshot: plus, emoji and camera shortcuts, microphone/send toggle, and a five-item attachment grid below the input. Test scenarios share this interaction and require Send after selecting media.
-- [Nov 13 meeting recheck](Meeting-20261113-Recheck-v47.md) lists completed prototype behavior and external dependencies.
+增加团队版本管理 / Team version management / Gestão de versões para a equipe
 
-See [meeting scope and open questions](Meeting-20261113-Scope.md).
+- 新增当前版本入口；可展开每版改动、影响范围、验证与待办。 / Add a current-version entry with changes, impact, validation and pending work per release. / Adicionar acesso à versão atual com alterações, impacto, validação e pendências.
+- 以统一登记文件生成界面和更新清单，补录 v40–v47；更早提交作为原始记录归档。 / Generate the interface and changelog from one registry; backfill v40–v47 and retain earlier commits as raw history. / Gerar interface e registro a partir de um cadastro único; recuperar v40–v47 e preservar commits anteriores.
 
-- Nov 13 meeting: a shared access hub demonstrates search, H5 installation, cold and warm startup, all external links landing on the simple or full business profile. Added a contact save form, voice input, content-specific message actions, template summaries, delivery/read ticks and Push fallbacks. Account details are static; profile Favourites and temporary messages are absent. File limits, badge API/list policy, Will’s sharing card/shortlink and final report taxonomy remain pending.
-- H5 uses the finalized floating PhizChat banner, centered merchant card, wallpaper and legal footer. Unavailable links use the broken-link page; the app action opens PhizChat without returning to the invalid merchant. Normal installation and sign-in preserve the original business profile target.
-- Conversation identity cards use a centered avatar, name, verification date and fixed introduction. Block and Profile sit side by side, with a separate Add contact entry before saving; no saved-contact status row in conversation cards. First-contact consent timing is unchanged.
-- Business-account details are non-clickable in both simple and full profiles, including test merchants. Use the Chat shortcut to enter the conversation.
-- Business profiles follow the supplied cover layout. Before conversation creation, show the A sections only; after creation, add media, message management, mute, theme and lock. Profile Favourites and temporary messages are excluded. Security and chat management appear in both. Empty history cannot be cleared.
-- Linked Channel and Mini App entries follow association rules, alongside labeled Chat and Search shortcuts. Message management reuses independent Utility (Service messages) and Marketing decisions, without a master switch. Verification dates are illustrative sample data.
-- Preview states are organized into seven groups and 22 presets. Requested remarks follow the preview state names; linked-service presets include no Channel, no Mini App, and neither linked. List-specific notes explain unchanged user interactions. Profile review preserves existing verification. Conversation creation, service windows, business availability and category consent are shown separately. Legacy snapshots and first-contact transitions preserve accepted category choices.
-- Regular business conversations, first contact and test scenarios share the same Manage this business menu and notification-management components.
-- Blocking and unblocking use confirmation dialogs in all conversations. Unblocking leaves notification categories paused. Offline and unavailable states prevent subscription changes.
-- Acceptance uses the screenshot-style Phiz card and a green check confirmation. Notification management is entered explicitly through the upper-right menu.
-- Push previews use the PhizChat app name and icon, the business title and message summary. Muted or blocked conversations suppress Push previews.
-- Test scenario conversation menus show Mute conversation, Notification management and Block business.
-- Notification management provides independent Accept or Do not receive choices for Utility and Marketing.
-- Each consent prompt offers one message-specific Accept button. Skipping leaves the category unapproved, explicit refusal is in Notification management, and reporting is in the message menu.
-- The first-contact demonstration includes separate Utility and Marketing requests in one conversation. A second marketing message is delivered only after the user accepts Marketing and the business retries. Business profiles use a single Add contact row and show its saved status after adding. The PicPay marketing example shows an image, offer copy, and a View offers button that opens a local preview.
-- Test scenarios use shared conversation rows, bubbles, composer and sheets.
-- Nine merchant scenarios are available in Test scenarios, with source-file content preserved verbatim; specification conflicts are flagged separately.
-- Interactive cases cover handoff, file retry, URL failures, reply/list actions, expiry and Utility pause/resume.
-- Users can reply before accepting; replying does not grant consent.
-- Accept is separate from adding the business to contacts.
-- Profiles show public information before conversation creation, and full settings afterwards. Add to contacts occupies its own row near the top; the duplicate conversation row is removed. The Chat shortcut below the cover opens the conversation. Block remains at the bottom.
-- For first business contact, Add to contacts appears only after acceptance and a page reload. Accept and Add to contacts are never shown together. Other conversation prompts are unchanged. Saving a contact does not grant consent.
-- The business introduction is fixed; acceptance inserts a separate system message.
-- Blocking and unblocking insert system notices in the conversation.
-- Conversation previews stay on one line with the time aligned to the right.
-- English, 简体中文 and Português (BR) are supported.
+版本数据／构建一致性及交互回归检查；浏览器视觉验收未完成。
 
-The original project and IM review documents are preserved. Their text is not a statement that backend capabilities are implemented. This prototype simulates interactions locally; it does not send real messages or process payments.
+待确认：认证字段／列表一致性、文件白名单与大小、通讯录接口复用、Will 分享卡片与短链、冠创团队举报枚举、安全服务说明。
 
-中文：保留既有立项与 IM 评审文档，更新内嵌交互稿。独立交互稿支持下载后用浏览器打开。
-
-Português (Brasil): os documentos existentes de revisão foram preservados e o protótipo integrado foi atualizado. A versão independente pode ser aberta localmente no navegador.
+[Nov 13 meeting recheck](Meeting-20261113-Recheck-v47.md)
