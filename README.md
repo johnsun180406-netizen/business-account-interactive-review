@@ -6,13 +6,15 @@ PhizChat Business Account project and IM review, with an integrated interactive 
 - [Open the latest interactive prototype](https://johnsun180406-netizen.github.io/business-account-interactive-review/prototype.html)
 - Download [prototype.html](prototype.html) and open it in a browser for an offline interactive copy.
 
-## Design v45 · 2026-11-13
+## Design v46 · 2026-11-13
+
+- Conversation identity cards hide the saved-contact status after adding. The Add contact action remains available before saving.
 
 See [meeting scope and open questions](Meeting-20261113-Scope.md).
 
 - Nov 13 meeting: a shared access hub demonstrates search, H5 installation, cold and warm startup, all external links landing on the simple or full business profile. Added a contact save form, voice input, content-specific message actions, template summaries, delivery/read ticks and Push fallbacks. Account details are static; profile Favourites and temporary messages are absent. File limits, badge API/list policy, Will’s sharing card/shortlink and final report taxonomy remain pending.
 - H5 uses the finalized floating PhizChat banner, centered merchant card, wallpaper and legal footer. Unavailable links use the broken-link page; the app action opens PhizChat without returning to the invalid merchant. Normal installation and sign-in preserve the original business profile target.
-- Conversation identity cards use a centered avatar, name, verification date and fixed introduction. Block and Profile sit side by side, with a separate Add contact entry and saved feedback. First-contact consent timing is unchanged.
+- Conversation identity cards use a centered avatar, name, verification date and fixed introduction. Block and Profile sit side by side, with a separate Add contact entry before saving. First-contact consent timing is unchanged.
 - Business-account details are non-clickable in both simple and full profiles, including test merchants. Use the Chat shortcut to enter the conversation.
 - Business profiles follow the supplied cover layout. Before conversation creation, show the A sections only; after creation, add media, message management, mute, theme and lock. Profile Favourites and temporary messages are excluded. Security and chat management appear in both. Empty history cannot be cleared.
 - Linked Channel and Mini App entries follow association rules, alongside labeled Chat and Search shortcuts. Message management reuses independent Utility (Service messages) and Marketing decisions, without a master switch. Verification dates are illustrative sample data.
