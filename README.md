@@ -1,6 +1,6 @@
 # Business Account Interactive Review
 
-Current design: **v48** · 2026-11-13
+Current design: **v49** · 2026-11-16
 
 PicPay is an example merchant. This prototype does not establish App/API implementation or acceptance.
 
@@ -10,13 +10,16 @@ PicPay is an example merchant. This prototype does not establish App/API impleme
 - [Original project and IM review](https://johnsun180406-netizen.github.io/business-account-interactive-review/)
 - Download [prototype.html](prototype.html) to open an offline interactive copy.
 
-增加团队版本管理 / Team version management / Gestão de versões para a equipe
+安全提示定稿、双向媒体上限与PRD差异复核 / Security copy, bidirectional media limits and PRD audit / Texto de segurança, limites bidirecionais e revisão do PRD
 
-- 新增当前版本入口；可展开每版改动、影响范围、验证与待办。 / Add a current-version entry with changes, impact, validation and pending work per release. / Adicionar acesso à versão atual com alterações, impacto, validação e pendências.
-- 以统一登记文件生成界面和更新清单，补录 v40–v47；更早提交作为原始记录归档。 / Generate the interface and changelog from one registry; backfill v40–v47 and retain earlier commits as raw history. / Gerar interface e registro a partir de um cadastro único; recuperar v40–v47 e preservar commits anteriores.
+- 顶部黄色提示与安全弹层按11/16截图统一，底部按钮进入对应企业主页。 / Match the yellow notice and security sheet to the Nov 16 screenshot; the CTA opens the corresponding company profile. / Alinhar aviso amarelo e painel à captura de 16/11; o botão abre o perfil da empresa correspondente.
+- 上下行统一图片5MB、音频16MB、普通文件100MB、文本4096字符；本期不提供视频。增加超限提示并保留待发送内容。 / Unify both directions: image 5 MB, audio 16 MB, document 100 MB, text 4096 characters; no video. Reject over-limit input while preserving drafts. / Unificar ambas as direções: imagem 5 MB, áudio 16 MB, arquivo 100 MB, texto 4096 caracteres; sem vídeo. Rejeitar excesso mantendo o rascunho.
+- 对照在线总PRD快照d1:3175完成25项差异复核，区分PRD待同步、范围裁决、文案、原型覆盖和联调验证。 / Audit 25 differences against live master PRD snapshot d1:3175, separating document updates, scope decisions, wording, prototype coverage and integration. / Revisar 25 diferenças frente ao PRD online d1:3175, separando atualização documental, escopo, redação, cobertura do protótipo e integração.
 
-版本数据／构建一致性及交互回归检查；浏览器视觉验收未完成。
+三语安全文案、跳转、内容上限/超限、4096/4097码点、失败保留输入及既有交互回归通过；真实媒体链路和浏览器视觉验收尚未完成。
 
-待确认：认证字段／列表一致性、文件白名单与大小、通讯录接口复用、Will 分享卡片与短链、冠创团队举报枚举、安全服务说明。
+PRD同步双向上限和禁用视频；Marketing一期范围、四项首条入口、CNPJ、接待提示及回执语义需收口；MIME、字节与计数细则、通讯录接口、分享、举报枚举及实际安全保护待确认。
 
 [Nov 13 meeting recheck](Meeting-20261113-Recheck-v47.md)
+
+[Interaction/PRD difference report](prd-differences-v49.html) · [完整中文清单](PRD-Differences-v49.md)

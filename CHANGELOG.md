@@ -1,8 +1,52 @@
 # Business Account · 版本更新记录 / Changelog / Histórico
 
-当前设计版本 / Current design / Design atual: **v48**
+当前设计版本 / Current design / Design atual: **v49**
 
 vN 是设计版本，不代表 App 或 API 发布。发布日期按北京时间；历史验证未留存时明确标记。
+
+## v49 · 2026-11-16 · 安全提示定稿、双向媒体上限与PRD差异复核
+
+### 中文
+
+安全提示定稿、双向媒体上限与PRD差异复核
+
+商业会话、首次联系、测试场景、附件选择、文本发送、版本记录与审核报告
+
+- 顶部黄色提示与安全弹层按11/16截图统一，底部按钮进入对应企业主页。
+- 上下行统一图片5MB、音频16MB、普通文件100MB、文本4096字符；本期不提供视频。增加超限提示并保留待发送内容。
+- 对照在线总PRD快照d1:3175完成25项差异复核，区分PRD待同步、范围裁决、文案、原型覆盖和联调验证。
+
+三语安全文案、跳转、内容上限/超限、4096/4097码点、失败保留输入及既有交互回归通过；真实媒体链路和浏览器视觉验收尚未完成。
+
+PRD同步双向上限和禁用视频；Marketing一期范围、四项首条入口、CNPJ、接待提示及回执语义需收口；MIME、字节与计数细则、通讯录接口、分享、举报枚举及实际安全保护待确认。
+
+### English
+
+Security copy, bidirectional media limits and PRD audit
+
+Business chat, first contact, test cases, attachments, text sending, history and audit
+
+- Match the yellow notice and security sheet to the Nov 16 screenshot; the CTA opens the corresponding company profile.
+- Unify both directions: image 5 MB, audio 16 MB, document 100 MB, text 4096 characters; no video. Reject over-limit input while preserving drafts.
+- Audit 25 differences against live master PRD snapshot d1:3175, separating document updates, scope decisions, wording, prototype coverage and integration.
+
+Trilingual copy, profile routing, limits/overflow, 4096/4097 code points, draft retention and existing regression checks passed; real media integration and browser visual review remain incomplete.
+
+Align PRD limits and no-video scope; resolve Marketing phase, first-contact controls, CNPJ, handoff notices and receipt semantics. MIME/byte/counting rules, Contacts API, sharing, report types and actual security protection remain pending.
+
+### Português (BR)
+
+Texto de segurança, limites bidirecionais e revisão do PRD
+
+Conversa comercial, primeiro contato, testes, anexos, envio de texto, histórico e revisão
+
+- Alinhar aviso amarelo e painel à captura de 16/11; o botão abre o perfil da empresa correspondente.
+- Unificar ambas as direções: imagem 5 MB, áudio 16 MB, arquivo 100 MB, texto 4096 caracteres; sem vídeo. Rejeitar excesso mantendo o rascunho.
+- Revisar 25 diferenças frente ao PRD online d1:3175, separando atualização documental, escopo, redação, cobertura do protótipo e integração.
+
+Texto em três idiomas, navegação, limites/excesso, 4096/4097 pontos de código, rascunhos e regressão aprovados; integração real de mídia e revisão visual ainda incompletas.
+
+Alinhar limites e ausência de vídeo no PRD; resolver Marketing, controles iniciais, CNPJ, avisos de atendimento e recibos. MIME/bytes/contagem, API de contatos, compartilhamento, denúncias e proteção real pendentes.
 
 ## v48 · 2026-11-13 · 增加团队版本管理
 
@@ -44,6 +88,8 @@ Cabeçalho, histórico, registro de alterações e publicação
 Verificações de dados/build e regressão; revisão visual no navegador incompleta.
 
 Pendências: selo e consistência na lista, tipos/tamanhos de arquivos, API de contatos, cartão de compartilhamento/link curto de Will, denúncias e texto de segurança.
+
+[Commit 3c38a56](https://github.com/johnsun180406-netizen/business-account-interactive-review/commit/3c38a56864ea69dbaee3779fc78d170ee00ccd7c)
 
 ## v47 · 2026-11-13 · 输入区对齐截图并复核会议清单
 

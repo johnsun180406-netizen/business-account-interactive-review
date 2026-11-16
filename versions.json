@@ -1,17 +1,62 @@
 {
   "schemaVersion": 1,
-  "currentVersion": 48,
+  "currentVersion": 49,
   "versionPolicy": {
     "zh": "vN 是设计版本，不代表 App 或 API 发布。发布日期按北京时间；历史验证未留存时明确标记。",
     "en": "vN identifies a design release, not an App/API release. Dates use Asia/Shanghai; missing historical validation is explicitly marked.",
     "pt": "vN identifica uma versão de design, não uma versão do App/API. Datas em Asia/Shanghai; validações históricas ausentes são indicadas."
   },
   "pending": {
-    "zh": "待确认：认证字段／列表一致性、文件白名单与大小、通讯录接口复用、Will 分享卡片与短链、冠创团队举报枚举、安全服务说明。",
-    "en": "Pending: badge field/list consistency, file types and sizes, Contacts API reuse, Will sharing card/shortlink, report taxonomy and security wording.",
-    "pt": "Pendências: selo e consistência na lista, tipos/tamanhos de arquivos, API de contatos, cartão de compartilhamento/link curto de Will, denúncias e texto de segurança."
+    "zh": "PRD同步双向上限和禁用视频；Marketing一期范围、四项首条入口、CNPJ、接待提示及回执语义需收口；MIME、字节与计数细则、通讯录接口、分享、举报枚举及实际安全保护待确认。",
+    "en": "Align PRD limits and no-video scope; resolve Marketing phase, first-contact controls, CNPJ, handoff notices and receipt semantics. MIME/byte/counting rules, Contacts API, sharing, report types and actual security protection remain pending.",
+    "pt": "Alinhar limites e ausência de vídeo no PRD; resolver Marketing, controles iniciais, CNPJ, avisos de atendimento e recibos. MIME/bytes/contagem, API de contatos, compartilhamento, denúncias e proteção real pendentes."
   },
   "entries": [
+    {
+      "version": 49,
+      "date": "2026-11-16",
+      "title": {
+        "zh": "安全提示定稿、双向媒体上限与PRD差异复核",
+        "en": "Security copy, bidirectional media limits and PRD audit",
+        "pt": "Texto de segurança, limites bidirecionais e revisão do PRD"
+      },
+      "impact": {
+        "zh": "商业会话、首次联系、测试场景、附件选择、文本发送、版本记录与审核报告",
+        "en": "Business chat, first contact, test cases, attachments, text sending, history and audit",
+        "pt": "Conversa comercial, primeiro contato, testes, anexos, envio de texto, histórico e revisão"
+      },
+      "changes": [
+        {
+          "zh": "顶部黄色提示与安全弹层按11/16截图统一，底部按钮进入对应企业主页。",
+          "en": "Match the yellow notice and security sheet to the Nov 16 screenshot; the CTA opens the corresponding company profile.",
+          "pt": "Alinhar aviso amarelo e painel à captura de 16/11; o botão abre o perfil da empresa correspondente."
+        },
+        {
+          "zh": "上下行统一图片5MB、音频16MB、普通文件100MB、文本4096字符；本期不提供视频。增加超限提示并保留待发送内容。",
+          "en": "Unify both directions: image 5 MB, audio 16 MB, document 100 MB, text 4096 characters; no video. Reject over-limit input while preserving drafts.",
+          "pt": "Unificar ambas as direções: imagem 5 MB, áudio 16 MB, arquivo 100 MB, texto 4096 caracteres; sem vídeo. Rejeitar excesso mantendo o rascunho."
+        },
+        {
+          "zh": "对照在线总PRD快照d1:3175完成25项差异复核，区分PRD待同步、范围裁决、文案、原型覆盖和联调验证。",
+          "en": "Audit 25 differences against live master PRD snapshot d1:3175, separating document updates, scope decisions, wording, prototype coverage and integration.",
+          "pt": "Revisar 25 diferenças frente ao PRD online d1:3175, separando atualização documental, escopo, redação, cobertura do protótipo e integração."
+        }
+      ],
+      "validation": {
+        "zh": "三语安全文案、跳转、内容上限/超限、4096/4097码点、失败保留输入及既有交互回归通过；真实媒体链路和浏览器视觉验收尚未完成。",
+        "en": "Trilingual copy, profile routing, limits/overflow, 4096/4097 code points, draft retention and existing regression checks passed; real media integration and browser visual review remain incomplete.",
+        "pt": "Texto em três idiomas, navegação, limites/excesso, 4096/4097 pontos de código, rascunhos e regressão aprovados; integração real de mídia e revisão visual ainda incompletas."
+      },
+      "pending": {
+        "zh": "PRD同步双向上限和禁用视频；Marketing一期范围、四项首条入口、CNPJ、接待提示及回执语义需收口；MIME、字节与计数细则、通讯录接口、分享、举报枚举及实际安全保护待确认。",
+        "en": "Align PRD limits and no-video scope; resolve Marketing phase, first-contact controls, CNPJ, handoff notices and receipt semantics. MIME/byte/counting rules, Contacts API, sharing, report types and actual security protection remain pending.",
+        "pt": "Alinhar limites e ausência de vídeo no PRD; resolver Marketing, controles iniciais, CNPJ, avisos de atendimento e recibos. MIME/bytes/contagem, API de contatos, compartilhamento, denúncias e proteção real pendentes."
+      },
+      "commit": null,
+      "sourceSha256": "5dc88982c0c5323af77bfc28174bb8ff0a78d0deecd0f51a49db6d7d1225923a",
+      "designSha256": "ef2e9984ce2baa59fd2ed0c6ef06b41ba9a23cef79b631415c5f79462b5a772f",
+      "auditReport": "prd-differences-v49.html"
+    },
     {
       "version": 48,
       "date": "2026-11-13",
@@ -42,7 +87,7 @@
         "en": "Version data/build consistency and interaction regression checks; browser visual review incomplete.",
         "pt": "Verificações de dados/build e regressão; revisão visual no navegador incompleta."
       },
-      "commit": null,
+      "commit": "3c38a56864ea69dbaee3779fc78d170ee00ccd7c",
       "pending": {
         "zh": "待确认：认证字段／列表一致性、文件白名单与大小、通讯录接口复用、Will 分享卡片与短链、冠创团队举报枚举、安全服务说明。",
         "en": "Pending: badge field/list consistency, file types and sizes, Contacts API reuse, Will sharing card/shortlink, report taxonomy and security wording.",
