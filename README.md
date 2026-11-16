@@ -1,25 +1,23 @@
 # Business Account Interactive Review
 
-Current design: **v49** · 2026-11-16
+Current design: **v50** · 2026-11-16
 
 PicPay is an example merchant. This prototype does not establish App/API implementation or acceptance.
 
 - [Open interactive prototype](https://johnsun180406-netizen.github.io/business-account-interactive-review/prototype.html)
-- [Version history / 版本记录 / Histórico](https://johnsun180406-netizen.github.io/business-account-interactive-review/versions.html)
+- [Version history / 版本记录 / Histórico / Historial](https://johnsun180406-netizen.github.io/business-account-interactive-review/versions.html)
 - [Changelog](CHANGELOG.md) · [Versioning process](VERSIONING.md) · [Registry](versions.json)
 - [Original project and IM review](https://johnsun180406-netizen.github.io/business-account-interactive-review/)
 - Download [prototype.html](prototype.html) to open an offline interactive copy.
 
-安全提示定稿、双向媒体上限与PRD差异复核 / Security copy, bidirectional media limits and PRD audit / Texto de segurança, limites bidirecionais e revisão do PRD
+新增西班牙语（墨西哥）版本 / Add Spanish (Mexico) / Adicionar espanhol (México) / Agregar español (México)
 
-- 顶部黄色提示与安全弹层按11/16截图统一，底部按钮进入对应企业主页。 / Match the yellow notice and security sheet to the Nov 16 screenshot; the CTA opens the corresponding company profile. / Alinhar aviso amarelo e painel à captura de 16/11; o botão abre o perfil da empresa correspondente.
-- 上下行统一图片5MB、音频16MB、普通文件100MB、文本4096字符；本期不提供视频。增加超限提示并保留待发送内容。 / Unify both directions: image 5 MB, audio 16 MB, document 100 MB, text 4096 characters; no video. Reject over-limit input while preserving drafts. / Unificar ambas as direções: imagem 5 MB, áudio 16 MB, arquivo 100 MB, texto 4096 caracteres; sem vídeo. Rejeitar excesso mantendo o rascunho.
-- 对照在线总PRD快照d1:3175完成25项差异复核，区分PRD待同步、范围裁决、文案、原型覆盖和联调验证。 / Audit 25 differences against live master PRD snapshot d1:3175, separating document updates, scope decisions, wording, prototype coverage and integration. / Revisar 25 diferenças frente ao PRD online d1:3175, separando atualização documental, escopo, redação, cobertura do protótipo e integração.
+- 增加Español (México)选项，补齐896条西班牙语文案及动态参数，语言选择可恢复。 / Add Español (México), 896 Spanish messages and dynamic placeholders, with saved language restoration. / Adicionar Español (México), 896 textos e parâmetros dinâmicos, com restauração do idioma salvo. / Agregar Español (México), 896 textos y parámetros dinámicos, con restauración del idioma guardado.
+- 补齐状态分类、消息形态、通知授权、错误提示、场景步骤与团队版本记录的西语内容。 / Localize states, message formats, notification consent, errors, scenario steps and team version history. / Traduzir estados, formatos, consentimento, erros, etapas de cenários e histórico da equipe. / Traducir estados, formatos, consentimiento de avisos, errores, pasos de escenarios e historial del equipo.
+- 保留既有中英葡语言及交互规则；示例商户名称、CNPJ、Pix、CPF和R$金额保留原始业务数据。 / Preserve existing Chinese, English, Portuguese and interaction rules; keep original merchant names, CNPJ, Pix, CPF and R$ amounts. / Preservar os idiomas e regras existentes; manter nomes dos comerciantes, CNPJ, Pix, CPF e valores em R$. / Conservar los idiomas y reglas existentes; mantener los nombres de empresas, CNPJ, Pix, CPF y montos en R$.
 
-三语安全文案、跳转、内容上限/超限、4096/4097码点、失败保留输入及既有交互回归通过；真实媒体链路和浏览器视觉验收尚未完成。
+西语页面、22类预览状态、消息形态、弹层、九个场景及其所有步骤渲染检查通过；接受状态独立、输入和媒体上限、草稿保留、语言恢复及既有流程回归通过。尚未完成墨西哥母语审校和浏览器视觉验收。
 
 PRD同步双向上限和禁用视频；Marketing一期范围、四项首条入口、CNPJ、接待提示及回执语义需收口；MIME、字节与计数细则、通讯录接口、分享、举报枚举及实际安全保护待确认。
 
 [Nov 13 meeting recheck](Meeting-20261113-Recheck-v47.md)
-
-[Interaction/PRD difference report](prd-differences-v49.html) · [完整中文清单](PRD-Differences-v49.md)

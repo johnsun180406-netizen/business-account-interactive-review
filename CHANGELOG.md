@@ -1,8 +1,66 @@
 # Business Account · 版本更新记录 / Changelog / Histórico
 
-当前设计版本 / Current design / Design atual: **v49**
+当前设计版本 / Current design / Design atual: **v50**
 
 vN 是设计版本，不代表 App 或 API 发布。发布日期按北京时间；历史验证未留存时明确标记。
+
+## v50 · 2026-11-16 · 新增西班牙语（墨西哥）版本
+
+### 中文
+
+新增西班牙语（墨西哥）版本
+
+语言切换、会话列表、商业会话、商业主页、H5访问路径、弹层、全部九个测试场景和版本记录
+
+- 增加Español (México)选项，补齐896条西班牙语文案及动态参数，语言选择可恢复。
+- 补齐状态分类、消息形态、通知授权、错误提示、场景步骤与团队版本记录的西语内容。
+- 保留既有中英葡语言及交互规则；示例商户名称、CNPJ、Pix、CPF和R$金额保留原始业务数据。
+
+西语页面、22类预览状态、消息形态、弹层、九个场景及其所有步骤渲染检查通过；接受状态独立、输入和媒体上限、草稿保留、语言恢复及既有流程回归通过。尚未完成墨西哥母语审校和浏览器视觉验收。
+
+PRD同步双向上限和禁用视频；Marketing一期范围、四项首条入口、CNPJ、接待提示及回执语义需收口；MIME、字节与计数细则、通讯录接口、分享、举报枚举及实际安全保护待确认。
+
+### English
+
+Add Spanish (Mexico)
+
+Language switcher, chat list, business chat/profile, H5 access, sheets, all nine test scenarios and version history
+
+- Add Español (México), 896 Spanish messages and dynamic placeholders, with saved language restoration.
+- Localize states, message formats, notification consent, errors, scenario steps and team version history.
+- Preserve existing Chinese, English, Portuguese and interaction rules; keep original merchant names, CNPJ, Pix, CPF and R$ amounts.
+
+Spanish page, 22-preset, format, sheet and all nine scenario-step render checks passed. Independent consent, input/media limits, draft retention, saved language and existing flow regressions passed. Native Mexican review and browser visual acceptance remain pending.
+
+Align PRD limits and no-video scope; resolve Marketing phase, first-contact controls, CNPJ, handoff notices and receipt semantics. MIME/byte/counting rules, Contacts API, sharing, report types and actual security protection remain pending.
+
+### Português (BR)
+
+Adicionar espanhol (México)
+
+Seletor de idioma, lista, conversa e perfil comercial, acesso H5, painéis, nove cenários e histórico
+
+- Adicionar Español (México), 896 textos e parâmetros dinâmicos, com restauração do idioma salvo.
+- Traduzir estados, formatos, consentimento, erros, etapas de cenários e histórico da equipe.
+- Preservar os idiomas e regras existentes; manter nomes dos comerciantes, CNPJ, Pix, CPF e valores em R$.
+
+Aprovadas verificações de páginas, 22 estados, formatos, painéis, nove cenários e etapas, consentimento independente, limites, rascunhos, idioma salvo e regressão. Revisão por falante mexicano e aceite visual pendentes.
+
+Alinhar limites e ausência de vídeo no PRD; resolver Marketing, controles iniciais, CNPJ, avisos de atendimento e recibos. MIME/bytes/contagem, API de contatos, compartilhamento, denúncias e proteção real pendentes.
+
+### Español (México)
+
+Agregar español (México)
+
+Selector de idioma, lista de chats, conversación y perfil de empresa, acceso H5, paneles, nueve escenarios e historial
+
+- Agregar Español (México), 896 textos y parámetros dinámicos, con restauración del idioma guardado.
+- Traducir estados, formatos, consentimiento de avisos, errores, pasos de escenarios e historial del equipo.
+- Conservar los idiomas y reglas existentes; mantener los nombres de empresas, CNPJ, Pix, CPF y montos en R$.
+
+Pasaron las revisiones de páginas, 22 estados, formatos, paneles, nueve escenarios y sus pasos, consentimiento independiente, límites, borradores, idioma guardado y regresión. Quedan pendientes la revisión por un hablante mexicano y la validación visual en navegador.
+
+Alinear los límites y la exclusión de video en el PRD; resolver Marketing, controles iniciales, CNPJ, avisos de atención y recibos. MIME, bytes, conteo, API de contactos, compartir, reportes y protección real siguen pendientes.
 
 ## v49 · 2026-11-16 · 安全提示定稿、双向媒体上限与PRD差异复核
 
@@ -48,6 +106,22 @@ Texto em três idiomas, navegação, limites/excesso, 4096/4097 pontos de códig
 
 Alinhar limites e ausência de vídeo no PRD; resolver Marketing, controles iniciais, CNPJ, avisos de atendimento e recibos. MIME/bytes/contagem, API de contatos, compartilhamento, denúncias e proteção real pendentes.
 
+### Español (México)
+
+Texto de seguridad, límites bidireccionales y revisión del PRD
+
+Chat de empresa, primer contacto, pruebas, adjuntos, texto, historial y revisión
+
+- Alinear el aviso amarillo y el panel de seguridad con la captura del 16/11; el botón abre el perfil de la empresa correspondiente.
+- Unificar ambas direcciones: imagen 5 MB, audio 16 MB, documento 100 MB, texto 4096 caracteres; sin video. Rechazar los excesos conservando el borrador.
+- Revisar 25 diferencias con el PRD principal online d1:3175, separando cambios documentales, decisiones de alcance, redacción, cobertura e integración.
+
+Pasaron las revisiones de tres idiomas, navegación, límites/excesos, 4096/4097 puntos de código, conservación de borradores y regresión. La integración multimedia real y la revisión visual en navegador siguen pendientes.
+
+Alinear los límites y la exclusión de video en el PRD; resolver Marketing, controles iniciales, CNPJ, avisos de atención y recibos. MIME, bytes, conteo, API de contactos, compartir, reportes y protección real siguen pendientes.
+
+[Commit 2008ad5](https://github.com/johnsun180406-netizen/business-account-interactive-review/commit/2008ad53a1e04ebd720d32e9816d197750934cdf)
+
 ## v48 · 2026-11-13 · 增加团队版本管理
 
 ### 中文
@@ -88,6 +162,19 @@ Cabeçalho, histórico, registro de alterações e publicação
 Verificações de dados/build e regressão; revisão visual no navegador incompleta.
 
 Pendências: selo e consistência na lista, tipos/tamanhos de arquivos, API de contatos, cartão de compartilhamento/link curto de Will, denúncias e texto de segurança.
+
+### Español (México)
+
+Administración de versiones para el equipo
+
+Encabezado del prototipo, historial, registro de cambios y proceso de publicación
+
+- Agregar una entrada de versión actual con cambios, impacto, validación y pendientes por publicación.
+- Generar interfaz y registro desde una sola fuente; recuperar v40–v47 y conservar los commits anteriores como historial original.
+
+Revisiones de datos, consistencia de compilación y regresión; revisión visual en navegador pendiente.
+
+Pendientes: insignia y consistencia, formatos/tamaños de archivos, API de contactos, tarjeta/enlace de Will, clasificación de reportes y texto de seguridad.
 
 [Commit 3c38a56](https://github.com/johnsun180406-netizen/business-account-interactive-review/commit/3c38a56864ea69dbaee3779fc78d170ee00ccd7c)
 
@@ -132,6 +219,19 @@ Verificações locais aprovadas; revisão visual no navegador incompleta.
 
 Pendências: selo e consistência na lista, tipos/tamanhos de arquivos, API de contatos, cartão de compartilhamento/link curto de Will, denúncias e texto de segurança.
 
+### Español (México)
+
+Alineación de entrada y revisión de la reunión
+
+Chat normal, primer contacto, pruebas y lista del 13/11
+
+- Unificar agregar, emoji, cámara y alternancia voz/enviar; usar una cuadrícula inferior de cinco adjuntos.
+- Corregir el envío inmediato al elegir adjuntos en pruebas; exigir Enviar y agregar revisión por punto.
+
+Revisiones locales de interacción aprobadas; revisión visual en navegador pendiente.
+
+Pendientes: insignia y consistencia, formatos/tamaños de archivos, API de contactos, tarjeta/enlace de Will, clasificación de reportes y texto de seguridad.
+
 [Commit 2095bd8](https://github.com/johnsun180406-netizen/business-account-interactive-review/commit/2095bd860752d9810050c1e3d96db794115a8f76)
 
 ## v46 · 2026-11-13 · 去掉卡片的已添加联系人
@@ -171,6 +271,18 @@ Cartões de identidade em conversas, primeiro contato e testes
 Verificações locais aprovadas; revisão visual no navegador incompleta.
 
 Pendências: selo e consistência na lista, tipos/tamanhos de arquivos, API de contatos, cartão de compartilhamento/link curto de Will, denúncias e texto de segurança.
+
+### Español (México)
+
+Quitar la indicación de contacto agregado de las tarjetas
+
+Tarjetas de identidad en chats, primer contacto y pruebas
+
+- Ocultar la fila de contacto agregado después de guardar; mantener la acción antes de guardarlo.
+
+Revisiones locales de interacción aprobadas; revisión visual en navegador pendiente.
+
+Pendientes: insignia y consistencia, formatos/tamaños de archivos, API de contactos, tarjeta/enlace de Will, clasificación de reportes y texto de seguridad.
 
 [Commit 6960d91](https://github.com/johnsun180406-netizen/business-account-interactive-review/commit/6960d914e2b2770821811afd57a18b625e44af23)
 
@@ -218,6 +330,20 @@ Verificações locais aprovadas; revisão visual no navegador incompleta.
 
 Pendências: selo e consistência na lista, tipos/tamanhos de arquivos, API de contatos, cartão de compartilhamento/link curto de Will, denúncias e texto de segurança.
 
+### Español (México)
+
+Actualizaciones de interacción de la reunión del 13/11
+
+Rutas de acceso, lista, entrada, perfil y acciones de mensajes
+
+- Agregar una central de acceso, apertura H5 en frío/caliente al perfil, formulario de contacto y demostración de voz.
+- Agregar recibos, plantillas de texto/imagen/documento, alternativa Push, avatar predeterminado, seguridad y tipos de reporte propuestos.
+- Hacer estáticos los datos comerciales; quitar Favoritos del perfil y mensajes temporales.
+
+Revisiones locales de interacción aprobadas; revisión visual en navegador pendiente.
+
+Pendientes: insignia y consistencia, formatos/tamaños de archivos, API de contactos, tarjeta/enlace de Will, clasificación de reportes y texto de seguridad.
+
 [Commit 2b008d6](https://github.com/johnsun180406-netizen/business-account-interactive-review/commit/2b008d676a393df894683e8825a3b02f0998b5c3)
 
 ## v44 · 2026-11-12 · 采用 H5 定稿
@@ -257,6 +383,18 @@ Páginas H5 disponíveis e indisponíveis
 Commit verificado; resultados históricos de validação não foram recuperados.
 
 Consulte o commit; regras posteriores podem substituí-lo.
+
+### Español (México)
+
+Diseño final del H5
+
+Páginas H5 disponibles y no disponibles
+
+- Usar la franja flotante de PhizChat, tarjeta central y pie legal; mostrar la página no disponible para enlaces inválidos.
+
+Commit verificado; no se recuperaron resultados históricos de validación.
+
+Consulta este commit; las reglas posteriores pueden reemplazarlo.
 
 [Commit cd598d0](https://github.com/johnsun180406-netizen/business-account-interactive-review/commit/cd598d02439808c36d7ca790235a4754d4899f00)
 
@@ -298,6 +436,18 @@ Commit verificado; resultados históricos de validação não foram recuperados.
 
 Consulte o commit; regras posteriores podem substituí-lo.
 
+### Español (México)
+
+Tarjetas de identidad de empresa unificadas
+
+Tarjetas de empresa en el chat
+
+- Centrar avatar, nombre, fecha de verificación e introducción fija; Bloquear y Perfil juntos, con Agregar contacto por separado.
+
+Commit verificado; no se recuperaron resultados históricos de validación.
+
+Consulta este commit; las reglas posteriores pueden reemplazarlo.
+
 [Commit 86ccf6e](https://github.com/johnsun180406-netizen/business-account-interactive-review/commit/86ccf6ecc46d0f1c110e5f96e7d45003279be2f9)
 
 ## v42 · 2026-11-12 · 帐户资料卡片跳转会话
@@ -337,6 +487,18 @@ Bloco de dados no perfil comercial
 Commit verificado; resultados históricos de validação não foram recuperados.
 
 Consulte o commit; regras posteriores podem substituí-lo.
+
+### Español (México)
+
+La tarjeta de datos comerciales abre el chat
+
+Bloque de datos de la cuenta en el perfil
+
+- En ese momento los datos abrían el chat; v45 lo sustituyó por datos estáticos.
+
+Commit verificado; no se recuperaron resultados históricos de validación.
+
+Consulta este commit; las reglas posteriores pueden reemplazarlo.
 
 [Commit 3ba4ac8](https://github.com/johnsun180406-netizen/business-account-interactive-review/commit/3ba4ac8656ff6b6be9be845ab64941111cb52595)
 
@@ -378,6 +540,18 @@ Commit verificado; resultados históricos de validação não foram recuperados.
 
 Consulte o commit; regras posteriores podem substituí-lo.
 
+### Español (México)
+
+Estados A/B del perfil de empresa
+
+Perfiles antes y después de crear la conversación
+
+- Usar un perfil con portada; mostrar secciones A antes de crear el chat y todas después; los accesos vinculados dependen de su disponibilidad.
+
+Commit verificado; no se recuperaron resultados históricos de validación.
+
+Consulta este commit; las reglas posteriores pueden reemplazarlo.
+
 [Commit 728c73a](https://github.com/johnsun180406-netizen/business-account-interactive-review/commit/728c73a66711cd54ce5ed4234cef59d05bc7c945)
 
 ## v40 · 2026-11-12 · 补齐预览状态与备注
@@ -417,6 +591,18 @@ Grupos de estados e notas da lista de conversas
 Commit verificado; resultados históricos de validação não foram recuperados.
 
 Consulte o commit; regras posteriores podem substituí-lo.
+
+### Español (México)
+
+Estados de vista previa y notas
+
+Grupos de estados y notas de la lista de chats
+
+- Agregar notas a siete grupos, incluida la falta de Mini App y la ausencia de Canal y Mini App.
+
+Commit verificado; no se recuperaron resultados históricos de validación.
+
+Consulta este commit; las reglas posteriores pueden reemplazarlo.
 
 [Commit d4a8ff1](https://github.com/johnsun180406-netizen/business-account-interactive-review/commit/d4a8ff1104d766c05d251847500f3bfb614452e0)
 

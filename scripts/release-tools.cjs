@@ -1,5 +1,5 @@
 const fs=require('fs'),crypto=require('crypto'),assert=require('assert/strict');
-const langs=['zh','en','pt'];
+const langs=['zh','en','pt','es'];
 function text3(x,label){assert(x&&langs.every(k=>typeof x[k]==='string'&&x[k].trim()),'Missing translation: '+label);}
 function sourceHash(source){return crypto.createHash('sha256').update(source.replace(/\/\* RELEASE_DATA_START \*\/[\s\S]*?\/\* RELEASE_DATA_END \*\//,'/* RELEASE_DATA */').replace(/\r\n/g,'\n')).digest('hex');}
 function validate(data,source){assert.equal(data.schemaVersion,1);assert(data.entries?.length);assert.equal(data.currentVersion,data.entries[0].version);text3(data.versionPolicy,'policy');text3(data.pending,'pending');const seen=new Set();let prev=Infinity;for(const r of data.entries){assert(Number.isInteger(r.version)&&r.version>0&&!seen.has(r.version)&&r.version<prev,'Version order/duplicate');seen.add(r.version);prev=r.version;assert(/^\d{4}-\d{2}-\d{2}$/.test(r.date),'Date required');for(const k of ['title','impact','validation','pending'])text3(r[k],k);assert(r.changes?.length,'Changes required');r.changes.forEach(x=>text3(x,'change'));if(r.commit)assert(/^[a-f0-9]{40}$/.test(r.commit),'Invalid commit');}if(source)assert.equal(data.entries[0].sourceSha256,sourceHash(source),'Runtime changed without a new version entry. Register a new release before building.');return data;}
