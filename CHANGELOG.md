@@ -1,8 +1,70 @@
 # Business Account · 版本更新记录 / Changelog / Histórico
 
-当前设计版本 / Current design / Design atual: **v50**
+当前设计版本 / Current design / Design atual: **v51**
 
 vN 是设计版本，不代表 App 或 API 发布。发布日期按北京时间；历史验证未留存时明确标记。
+
+## v51 · 2026-11-23 · 按最新 Figma 更新首条消息授权与商业主页管理入口
+
+### 中文
+
+按最新 Figma 更新首条消息授权与商业主页管理入口
+
+商业会话、企业首次联系、两类消息同时待确认、九个源文件测试场景及四语版本记录
+
+- 移除商业会话右上角设置入口；通过商家名称或资料卡进入商业主页，日常消息管理、静音和屏蔽沿用主页入口。
+- 首条消息后使用白色确认卡，左侧停止、右侧接受；接受后显示带停止入口的简短系统提示。
+- 补齐停止确认、已停止提示、重新接收确认及继续接收的闭环；停止只作用于当前消息类别，屏蔽作用于整个商家。
+- 服务与营销分别确认；未选择或取消保持待确认，用户回复、添加联系人均不自动授权。主示例与文件测试场景复用同一交互。
+
+四语授权独立性、接受/停止/恢复、取消、离线失败、屏蔽与解除反馈通过；全部预览状态和九个场景逐步渲染通过；已有联系人、H5、输入与长按等10组回归检查通过。
+
+本次为交互原型更新，不代表 App/API 已实现或发布；中、西语为设计稿对应译文，母语审校仍待完成。原 PRD/API 接口、分享及举报枚举等待办继续按原清单跟进。
+
+### English
+
+Align first-message consent and profile management with Figma
+
+Business chats, first contact, dual-category requests, nine source scenarios and four-language version history
+
+- Remove chat-header settings; use the business name or profile card to access daily message, mute and block controls in the profile.
+- Use a white card after the first message, with Stop left and Accept right; acceptance becomes a compact system notice with Stop.
+- Complete stop confirmation, inactive notice and reactivation confirmation. Stop affects the current category; Block affects the entire business.
+- Keep service and marketing consent independent. Ignoring or cancelling stays pending; replies and contact saving never imply consent. Main and source scenarios share the flow.
+
+Four-language independent consent, accept/stop/resume, cancel, offline failure and block feedback passed. All preview states and nine scenario steps render. Ten existing regression groups passed.
+
+Prototype update only, not an App/API implementation or release. Chinese and Mexican Spanish equivalents await native review. Existing PRD/API, sharing and report-type follow-ups remain.
+
+### Português (BR)
+
+Alinhar consentimento inicial e gestão no perfil ao Figma
+
+Conversas comerciais, primeiro contato, duas categorias pendentes, nove cenários e histórico em quatro idiomas
+
+- Remover configurações do cabeçalho; acessar gestão de mensagens, silenciamento e bloqueio pelo nome ou cartão de perfil.
+- Exibir cartão branco após a primeira mensagem, com Parar à esquerda e Aceitar à direita; a aceitação vira aviso compacto com Parar.
+- Completar confirmação de parada, aviso desativado e reativação. Parar afeta a categoria atual; Bloquear afeta toda a empresa.
+- Manter autorizações de serviço e marketing independentes. Ignorar ou cancelar mantém pendente; responder e salvar contato não autorizam. Exemplos e cenários compartilham o fluxo.
+
+Aprovados consentimento independente, aceitar/parar/reativar, cancelar, falha offline e bloqueio em quatro idiomas. Estados e nove cenários renderizados; dez grupos de regressão aprovados.
+
+Atualização apenas do protótipo, sem implementação ou lançamento do App/API. Traduções chinesa e mexicana aguardam revisão nativa. Pendências de PRD/API, compartilhamento e denúncias permanecem.
+
+### Español (México)
+
+Alinear el consentimiento inicial y la administración en el perfil con Figma
+
+Chats de empresa, primer contacto, dos categorías pendientes, nueve escenarios e historial en cuatro idiomas
+
+- Quitar los ajustes del encabezado; acceder a mensajes, silencio y bloqueo desde el nombre o la tarjeta de perfil.
+- Mostrar una tarjeta blanca tras el primer mensaje, con Detener a la izquierda y Aceptar a la derecha; al aceptar aparece un aviso compacto con Detener.
+- Completar la confirmación para detener, el aviso desactivado y la reactivación. Detener afecta la categoría actual; Bloquear afecta toda la empresa.
+- Mantener independientes los permisos de servicio y marketing. Ignorar o cancelar conserva el estado pendiente; responder y guardar contactos no autoriza. Los ejemplos y escenarios comparten el flujo.
+
+Pasaron las pruebas de permisos independientes, aceptar/detener/reactivar, cancelar, sin conexión y bloqueo en cuatro idiomas. Se renderizan los estados y nueve escenarios; pasaron diez grupos de regresión.
+
+Actualización solo del prototipo, no de la implementación o publicación de App/API. Las traducciones al chino y español de México esperan revisión nativa. Siguen los pendientes de PRD/API, compartir y reportes.
 
 ## v50 · 2026-11-16 · 新增西班牙语（墨西哥）版本
 
@@ -61,6 +123,8 @@ Selector de idioma, lista de chats, conversación y perfil de empresa, acceso H5
 Pasaron las revisiones de páginas, 22 estados, formatos, paneles, nueve escenarios y sus pasos, consentimiento independiente, límites, borradores, idioma guardado y regresión. Quedan pendientes la revisión por un hablante mexicano y la validación visual en navegador.
 
 Alinear los límites y la exclusión de video en el PRD; resolver Marketing, controles iniciales, CNPJ, avisos de atención y recibos. MIME, bytes, conteo, API de contactos, compartir, reportes y protección real siguen pendientes.
+
+[Commit 0729725](https://github.com/johnsun180406-netizen/business-account-interactive-review/commit/07297253476986df9169ca583d1c1d7f11d505de)
 
 ## v49 · 2026-11-16 · 安全提示定稿、双向媒体上限与PRD差异复核
 

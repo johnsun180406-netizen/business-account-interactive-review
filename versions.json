@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "currentVersion": 50,
+  "currentVersion": 51,
   "versionPolicy": {
     "zh": "vN 是设计版本，不代表 App 或 API 发布。发布日期按北京时间；历史验证未留存时明确标记。",
     "en": "vN identifies a design release, not an App/API release. Dates use Asia/Shanghai; missing historical validation is explicitly marked.",
@@ -14,6 +14,63 @@
     "es": "Alinear los límites y la exclusión de video en el PRD; resolver Marketing, controles iniciales, CNPJ, avisos de atención y recibos. MIME, bytes, conteo, API de contactos, compartir, reportes y protección real siguen pendientes."
   },
   "entries": [
+    {
+      "version": 51,
+      "date": "2026-11-23",
+      "title": {
+        "zh": "按最新 Figma 更新首条消息授权与商业主页管理入口",
+        "en": "Align first-message consent and profile management with Figma",
+        "pt": "Alinhar consentimento inicial e gestão no perfil ao Figma",
+        "es": "Alinear el consentimiento inicial y la administración en el perfil con Figma"
+      },
+      "impact": {
+        "zh": "商业会话、企业首次联系、两类消息同时待确认、九个源文件测试场景及四语版本记录",
+        "en": "Business chats, first contact, dual-category requests, nine source scenarios and four-language version history",
+        "pt": "Conversas comerciais, primeiro contato, duas categorias pendentes, nove cenários e histórico em quatro idiomas",
+        "es": "Chats de empresa, primer contacto, dos categorías pendientes, nueve escenarios e historial en cuatro idiomas"
+      },
+      "changes": [
+        {
+          "zh": "移除商业会话右上角设置入口；通过商家名称或资料卡进入商业主页，日常消息管理、静音和屏蔽沿用主页入口。",
+          "en": "Remove chat-header settings; use the business name or profile card to access daily message, mute and block controls in the profile.",
+          "pt": "Remover configurações do cabeçalho; acessar gestão de mensagens, silenciamento e bloqueio pelo nome ou cartão de perfil.",
+          "es": "Quitar los ajustes del encabezado; acceder a mensajes, silencio y bloqueo desde el nombre o la tarjeta de perfil."
+        },
+        {
+          "zh": "首条消息后使用白色确认卡，左侧停止、右侧接受；接受后显示带停止入口的简短系统提示。",
+          "en": "Use a white card after the first message, with Stop left and Accept right; acceptance becomes a compact system notice with Stop.",
+          "pt": "Exibir cartão branco após a primeira mensagem, com Parar à esquerda e Aceitar à direita; a aceitação vira aviso compacto com Parar.",
+          "es": "Mostrar una tarjeta blanca tras el primer mensaje, con Detener a la izquierda y Aceptar a la derecha; al aceptar aparece un aviso compacto con Detener."
+        },
+        {
+          "zh": "补齐停止确认、已停止提示、重新接收确认及继续接收的闭环；停止只作用于当前消息类别，屏蔽作用于整个商家。",
+          "en": "Complete stop confirmation, inactive notice and reactivation confirmation. Stop affects the current category; Block affects the entire business.",
+          "pt": "Completar confirmação de parada, aviso desativado e reativação. Parar afeta a categoria atual; Bloquear afeta toda a empresa.",
+          "es": "Completar la confirmación para detener, el aviso desactivado y la reactivación. Detener afecta la categoría actual; Bloquear afecta toda la empresa."
+        },
+        {
+          "zh": "服务与营销分别确认；未选择或取消保持待确认，用户回复、添加联系人均不自动授权。主示例与文件测试场景复用同一交互。",
+          "en": "Keep service and marketing consent independent. Ignoring or cancelling stays pending; replies and contact saving never imply consent. Main and source scenarios share the flow.",
+          "pt": "Manter autorizações de serviço e marketing independentes. Ignorar ou cancelar mantém pendente; responder e salvar contato não autorizam. Exemplos e cenários compartilham o fluxo.",
+          "es": "Mantener independientes los permisos de servicio y marketing. Ignorar o cancelar conserva el estado pendiente; responder y guardar contactos no autoriza. Los ejemplos y escenarios comparten el flujo."
+        }
+      ],
+      "validation": {
+        "zh": "四语授权独立性、接受/停止/恢复、取消、离线失败、屏蔽与解除反馈通过；全部预览状态和九个场景逐步渲染通过；已有联系人、H5、输入与长按等10组回归检查通过。",
+        "en": "Four-language independent consent, accept/stop/resume, cancel, offline failure and block feedback passed. All preview states and nine scenario steps render. Ten existing regression groups passed.",
+        "pt": "Aprovados consentimento independente, aceitar/parar/reativar, cancelar, falha offline e bloqueio em quatro idiomas. Estados e nove cenários renderizados; dez grupos de regressão aprovados.",
+        "es": "Pasaron las pruebas de permisos independientes, aceptar/detener/reactivar, cancelar, sin conexión y bloqueo en cuatro idiomas. Se renderizan los estados y nueve escenarios; pasaron diez grupos de regresión."
+      },
+      "pending": {
+        "zh": "本次为交互原型更新，不代表 App/API 已实现或发布；中、西语为设计稿对应译文，母语审校仍待完成。原 PRD/API 接口、分享及举报枚举等待办继续按原清单跟进。",
+        "en": "Prototype update only, not an App/API implementation or release. Chinese and Mexican Spanish equivalents await native review. Existing PRD/API, sharing and report-type follow-ups remain.",
+        "pt": "Atualização apenas do protótipo, sem implementação ou lançamento do App/API. Traduções chinesa e mexicana aguardam revisão nativa. Pendências de PRD/API, compartilhamento e denúncias permanecem.",
+        "es": "Actualización solo del prototipo, no de la implementación o publicación de App/API. Las traducciones al chino y español de México esperan revisión nativa. Siguen los pendientes de PRD/API, compartir y reportes."
+      },
+      "commit": null,
+      "sourceSha256": "16fc882423dcfe84ce2bb64e00b5cc7250a60b5cfad2bd9e15e955f8b8ba5f2b",
+      "designSha256": "b3c969c1f2ba18ea753cdaa0953c14d1bddccac4fb4e5843307a06ca22a9fdb3"
+    },
     {
       "version": 50,
       "date": "2026-11-16",
@@ -61,7 +118,7 @@
         "pt": "Alinhar limites e ausência de vídeo no PRD; resolver Marketing, controles iniciais, CNPJ, avisos de atendimento e recibos. MIME/bytes/contagem, API de contatos, compartilhamento, denúncias e proteção real pendentes.",
         "es": "Alinear los límites y la exclusión de video en el PRD; resolver Marketing, controles iniciales, CNPJ, avisos de atención y recibos. MIME, bytes, conteo, API de contactos, compartir, reportes y protección real siguen pendientes."
       },
-      "commit": null,
+      "commit": "07297253476986df9169ca583d1c1d7f11d505de",
       "sourceSha256": "c12adb8db14b95c49ee8e5cf4ed825eaf16de35b39697b5435db5d0697fbf113",
       "designSha256": "8bf887cb4f1ec61d4139154901313b94a0d077dae4f7b848caa3941737083070"
     },

@@ -357,6 +357,21 @@
 #phiz-ba-trilingual .bt-category-options{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:4px}
 #phiz-ba-trilingual button.bt-category-option{padding:7px 9px;min-height:36px;border:1px solid var(--pb-line);border-radius:10px;font-size:12px}
 #phiz-ba-trilingual button.bt-category-option[aria-pressed="true"]{background:var(--pb-out);border-color:var(--pb-brand);color:var(--pb-brand-strong)}
+/* v51: Figma first-message consent, shared by primary and scenario conversations. */
+#phiz-ba-trilingual .bt-consent-question{align-self:flex-start;width:94%;max-width:100%;padding:14px;margin:0 0 10px;background:light-dark(#fff,#242725);border:0;border-radius:16px;color:var(--pb-text);box-sizing:border-box}
+#phiz-ba-trilingual .bt-consent-question p{margin:0 0 12px;font-size:14px;line-height:1.45;overflow-wrap:anywhere}
+#phiz-ba-trilingual .bt-consent-choice-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+#phiz-ba-trilingual .bt-consent-choice-actions button{min-height:44px;border:0;border-radius:24px;padding:10px 12px;line-height:1.25;font-size:14px;font-weight:600;white-space:normal}
+#phiz-ba-trilingual .bt-consent-stop{background:light-dark(#f4f4f4,#343735);color:#e60028}
+#phiz-ba-trilingual .bt-consent-accept{background:#15b94f;color:#fff}
+#phiz-ba-trilingual .bt-consent-status{align-self:center;width:94%;box-sizing:border-box;margin:6px 0 12px;padding:10px 12px;display:flex;justify-content:center;flex-wrap:wrap;gap:4px 10px;border-radius:10px;background:light-dark(#f4f4f4,#303431);color:var(--pb-sub);font-size:12px;line-height:1.45;text-align:center}
+#phiz-ba-trilingual .bt-consent-status .pb-link{font-size:inherit;font-weight:600;text-decoration:underline;min-height:28px;padding:0 4px;color:light-dark(#078c3c,#78dba1)}
+#phiz-ba-trilingual .bt-consent-confirm h3{font-size:21px;line-height:1.3;white-space:normal}
+#phiz-ba-trilingual .bt-consent-confirm>p{font-size:15px;line-height:1.5;color:var(--pb-sub);margin:12px 0 24px}
+#phiz-ba-trilingual .bt-consent-confirm .pb-button{min-height:44px;border-radius:25px;margin-top:10px}
+#phiz-ba-trilingual .bt-consent-confirm .primary{background:#15b94f;color:white}
+#phiz-ba-trilingual .bt-consent-confirm .bt-consent-block{background:light-dark(#f4f4f4,#343735);color:#e60028}
+
 </style>
 <style id="bt-identity-actions-css">#phiz-ba-trilingual .bt-identity-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:6px;margin-top:10px}#phiz-ba-trilingual .bt-identity-actions button{min-height:40px;justify-content:center}#phiz-ba-trilingual .bt-identity-actions button:disabled{opacity:.7}#phiz-ba-trilingual .bt-identity-actions .bt-identity-block{color:#bb3349}</style>
 <style id="bt-first-choice-css">#phiz-ba-trilingual .bt-first-choice{display:flex;justify-content:space-between;gap:12px;margin-top:12px}#phiz-ba-trilingual .bt-first-choice button{flex:1;min-height:42px;border:0;border-radius:22px;background:#f1f2f1;color:#b63b4d}#phiz-ba-trilingual .bt-first-choice button:last-child{background:#00aa59;color:white}</style>

@@ -1,6 +1,6 @@
 # Business Account Interactive Review
 
-Current design: **v50** · 2026-11-16
+Current design: **v51** · 2026-11-23
 
 PicPay is an example merchant. This prototype does not establish App/API implementation or acceptance.
 
@@ -10,13 +10,14 @@ PicPay is an example merchant. This prototype does not establish App/API impleme
 - [Original project and IM review](https://johnsun180406-netizen.github.io/business-account-interactive-review/)
 - Download [prototype.html](prototype.html) to open an offline interactive copy.
 
-新增西班牙语（墨西哥）版本 / Add Spanish (Mexico) / Adicionar espanhol (México) / Agregar español (México)
+按最新 Figma 更新首条消息授权与商业主页管理入口 / Align first-message consent and profile management with Figma / Alinhar consentimento inicial e gestão no perfil ao Figma / Alinear el consentimiento inicial y la administración en el perfil con Figma
 
-- 增加Español (México)选项，补齐896条西班牙语文案及动态参数，语言选择可恢复。 / Add Español (México), 896 Spanish messages and dynamic placeholders, with saved language restoration. / Adicionar Español (México), 896 textos e parâmetros dinâmicos, com restauração do idioma salvo. / Agregar Español (México), 896 textos y parámetros dinámicos, con restauración del idioma guardado.
-- 补齐状态分类、消息形态、通知授权、错误提示、场景步骤与团队版本记录的西语内容。 / Localize states, message formats, notification consent, errors, scenario steps and team version history. / Traduzir estados, formatos, consentimento, erros, etapas de cenários e histórico da equipe. / Traducir estados, formatos, consentimiento de avisos, errores, pasos de escenarios e historial del equipo.
-- 保留既有中英葡语言及交互规则；示例商户名称、CNPJ、Pix、CPF和R$金额保留原始业务数据。 / Preserve existing Chinese, English, Portuguese and interaction rules; keep original merchant names, CNPJ, Pix, CPF and R$ amounts. / Preservar os idiomas e regras existentes; manter nomes dos comerciantes, CNPJ, Pix, CPF e valores em R$. / Conservar los idiomas y reglas existentes; mantener los nombres de empresas, CNPJ, Pix, CPF y montos en R$.
+- 移除商业会话右上角设置入口；通过商家名称或资料卡进入商业主页，日常消息管理、静音和屏蔽沿用主页入口。 / Remove chat-header settings; use the business name or profile card to access daily message, mute and block controls in the profile. / Remover configurações do cabeçalho; acessar gestão de mensagens, silenciamento e bloqueio pelo nome ou cartão de perfil. / Quitar los ajustes del encabezado; acceder a mensajes, silencio y bloqueo desde el nombre o la tarjeta de perfil.
+- 首条消息后使用白色确认卡，左侧停止、右侧接受；接受后显示带停止入口的简短系统提示。 / Use a white card after the first message, with Stop left and Accept right; acceptance becomes a compact system notice with Stop. / Exibir cartão branco após a primeira mensagem, com Parar à esquerda e Aceitar à direita; a aceitação vira aviso compacto com Parar. / Mostrar una tarjeta blanca tras el primer mensaje, con Detener a la izquierda y Aceptar a la derecha; al aceptar aparece un aviso compacto con Detener.
+- 补齐停止确认、已停止提示、重新接收确认及继续接收的闭环；停止只作用于当前消息类别，屏蔽作用于整个商家。 / Complete stop confirmation, inactive notice and reactivation confirmation. Stop affects the current category; Block affects the entire business. / Completar confirmação de parada, aviso desativado e reativação. Parar afeta a categoria atual; Bloquear afeta toda a empresa. / Completar la confirmación para detener, el aviso desactivado y la reactivación. Detener afecta la categoría actual; Bloquear afecta toda la empresa.
+- 服务与营销分别确认；未选择或取消保持待确认，用户回复、添加联系人均不自动授权。主示例与文件测试场景复用同一交互。 / Keep service and marketing consent independent. Ignoring or cancelling stays pending; replies and contact saving never imply consent. Main and source scenarios share the flow. / Manter autorizações de serviço e marketing independentes. Ignorar ou cancelar mantém pendente; responder e salvar contato não autorizam. Exemplos e cenários compartilham o fluxo. / Mantener independientes los permisos de servicio y marketing. Ignorar o cancelar conserva el estado pendiente; responder y guardar contactos no autoriza. Los ejemplos y escenarios comparten el flujo.
 
-西语页面、22类预览状态、消息形态、弹层、九个场景及其所有步骤渲染检查通过；接受状态独立、输入和媒体上限、草稿保留、语言恢复及既有流程回归通过。尚未完成墨西哥母语审校和浏览器视觉验收。
+四语授权独立性、接受/停止/恢复、取消、离线失败、屏蔽与解除反馈通过；全部预览状态和九个场景逐步渲染通过；已有联系人、H5、输入与长按等10组回归检查通过。
 
 PRD同步双向上限和禁用视频；Marketing一期范围、四项首条入口、CNPJ、接待提示及回执语义需收口；MIME、字节与计数细则、通讯录接口、分享、举报枚举及实际安全保护待确认。
 
